@@ -11,8 +11,7 @@ def d1():
             if type(previous) == int and line > previous:
                 c1 += 1
             previous = line
-
-            
+          
             ## Part Two
             if len(window) == 3:
                 oldSum = sum(window)
