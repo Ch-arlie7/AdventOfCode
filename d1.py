@@ -5,24 +5,24 @@ def d1():
     c2 = 0          
     with open('d1.txt', 'r') as f:
         for line in f:   
+            line = int(line)
             
             ## Part One
-            if prev and int(line) > prev:
+            if prev and line > prev:
                 c1 += 1
-            prev = int(line)
+            prev = line
             
             ## Part Two
             if len(window) == 3:
                 oldSum = sum(window)
                 window = window[1:]
-                window.append(int(line))
+                window.append(line)
                 if sum(window) > oldSum:
                     c2 += 1
             else:
-                window.append(int(line))
+                window.append(line)
     return c1, c2
 
-print(d1())
         
 
 
