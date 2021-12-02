@@ -2,7 +2,7 @@ def d1():
     c1, c2 = 0, 0 
     previous = False   
     window = []        
-    with open('d1.txt', 'r') as file:
+    with open('d01.txt', 'r') as file:
         for line in file:   
             line = int(line)
             
