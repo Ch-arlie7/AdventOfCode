@@ -1,0 +1,83 @@
+def d1():
+    c1 = 0  
+    c2 = 0 
+    previous = False   
+    window = []        
+    with open('d1.txt', 'r') as file:
+        for line in file:   
+            line = int(line)
+            
+            ## Part One
+            if type(previous) == int and line > previous:
+                c1 += 1
+            previous = line
+
+            
+            ## Part Two
+            if len(window) == 3:
+                oldSum = sum(window)
+                window = window[1:]
+                window.append(line)
+                if sum(window) > oldSum:
+                    c2 += 1
+            else:
+                window.append(line)
+    return c1, c2
+
+
+def d2p1():
+    horizontal, depth = 0, 0
+    with open('d2.txt', 'r') as file:       
+        for line in file:   
+            line = line.strip().split(' ')
+            d, v = line[0], int(line[1])            
+            if d == 'forward':
+                horizontal += v
+            elif d == 'up':
+                depth -= v
+            else:
+                depth += v            
+    return horizontal * depth
+
+
+def d2p2():    
+    horizontal, depth, aim = 0, 0, 0
+    with open('d2.txt', 'r') as file:       
+        for line in file:   
+            line = line.strip().split(' ')
+            d, v = line[0], int(line[1])          
+            if d == 'forward':
+                horizontal += v
+                depth += (aim * v)
+            elif d == 'up':
+                aim -= v
+            else:
+                aim += v            
+    return horizontal * aim, horizontal * depth
+
+
+
+def d2():
+    return d2p1(), d2p2()
+
+
+
+def main():
+    print('Day 1: {}'.format(d1()))
+    print('Day 2: {}'.format(d2()))
+    
+
+if __name__ == '__main__':
+    main()
+    
+
+
+            
+            
+    
+         
+
+
+
+
+
