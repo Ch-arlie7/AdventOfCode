@@ -1,7 +1,7 @@
 def d2():   
     ## Aim in part 2 == Depth in part 1. 
     horizontal, depth, aim = 0, 0, 0
-    with open('d2.txt', 'r') as file:       
+    with open('d02.txt', 'r') as file:       
         for line in file:   
             line = line.strip().split(' ')
             d, v = line[0], int(line[1])          
