@@ -24,23 +24,8 @@ def d1():
                 window.append(line)
     return c1, c2
 
-
-def d2p1():
-    horizontal, depth = 0, 0
-    with open('d2.txt', 'r') as file:       
-        for line in file:   
-            line = line.strip().split(' ')
-            d, v = line[0], int(line[1])            
-            if d == 'forward':
-                horizontal += v
-            elif d == 'up':
-                depth -= v
-            else:
-                depth += v            
-    return horizontal * depth
-
-
-def d2p2():    
+def d2():   
+    ## Aim in part 2 == Depth in part 1. 
     horizontal, depth, aim = 0, 0, 0
     with open('d2.txt', 'r') as file:       
         for line in file:   
@@ -57,9 +42,6 @@ def d2p2():
 
 
 
-def d2():
-    return d2p1(), d2p2()
-
 
 
 def main():
@@ -70,14 +52,3 @@ def main():
 if __name__ == '__main__':
     main()
     
-
-
-            
-            
-    
-         
-
-
-
-
-
