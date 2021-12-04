@@ -1,5 +1,5 @@
 def getData():
-    '''Reads .txt file and formats input'''
+    '''Returns tuple: list of numbers, list of matrices'''
     with open('d04.txt', 'r') as file:
         data = [x.strip().replace('  ',' ').replace(' ',',') for x in file]
 
@@ -23,8 +23,7 @@ def getData():
 
 
 def updateMatrix(matrix, val):
-    '''Returns Matrix with all instances of 'val' replaced with True
-        Input: Matrix (list of list of ints), val (int)'''
+    '''Returns Matrix with all instances of 'val' replaced with True'''
     for y in range(len(matrix)):
         for x in range(len(matrix)):
             if matrix[y][x] == val:
@@ -33,8 +32,7 @@ def updateMatrix(matrix, val):
 
 
 def complete(matrix):
-    '''Input: Matrix
-        Returns True if Bingo, else False'''
+    '''Returns True if Bingo, else False'''
     for y in range(len(matrix)):
         if len(set(matrix[y])) == 1:
             return True
@@ -47,8 +45,7 @@ def complete(matrix):
 
             
 def score(matrix, number):
-    '''Input: Completed Matrix, Bingo number
-        Returns final score'''
+    '''Returns final score'''
     score = 0
     for y in range(len(matrix)):
         for x in range(len(matrix)):
